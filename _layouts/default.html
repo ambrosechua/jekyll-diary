@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>{{ site.title }}</title>
+	{% assign lvl = page.url | append: 'X' | split: '/' | size %}
+	{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+	<link rel="stylesheet" href="{{ relative }}styles.css" />
+</head>
+<body>
+{{ content }}
+	<script>
+	var relative = "{{ relative }}";
+	var images = document.querySelectorAll("img[src*='#images/']");
+	[].forEach.call(images, function (ele, index, array) {
+		var currentattr = ele.getAttribute("src");
+		var attr = currentattr.replace("#images/", relative + "images/");
+		ele.setAttribute("src", attr);
+	});
+	</script>
+</body>
+</html>

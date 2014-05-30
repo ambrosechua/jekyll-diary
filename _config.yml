@@ -1,0 +1,8 @@
+# Edit only this:
+title: "bla's personal diary"
+subtitle: "classified information, for my eyes only! "
+
+# Do not edit: 
+paginate: 10
+paginate_path: "page-:num"
+permalink: /:year/:month/:day/:title/
