@@ -162,6 +162,7 @@ article {
 }
 article .content {
 	padding-left: 70px;
+	word-wrap: break-word;
 }
 article h1 {
 	padding: 0;
