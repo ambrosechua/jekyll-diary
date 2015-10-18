@@ -50,6 +50,7 @@ a:hover, a:focus {
   padding: 0.8em;
   text-align: center;
   transition: 0.25s box-shadow, 0.25s -webkit-transform;
+  text-shadow: none;
 }
 .btn {
   padding: 0.7em;
