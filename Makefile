@@ -1,6 +1,3 @@
-# A makefile to help encrypt posts with a password
-# From https://gist.github.com/ambrosechua/e88bf467b3a0f2f14ff5
-
 SHELL := /bin/zsh
 
 DIRECTORY = "_posts"
@@ -80,6 +77,13 @@ decrypt:
 			rm $$f;\
 		fi;\
 	done;
+
+newpost:
+	ID="$$(echo 0000$$(($$(ls $(DIRECTORY)/ | wc -l) + 1)) | tail -c 5)";\
+	FILENAME="$$(date +%y-%m-%d)-$$ID$(EXT_FILE)";\
+	FILE="$(DIRECTORY)/$$FILENAME";\
+	echo "Opening file $$FILE...";\
+	$$EDITOR $$FILE;
 
 server:
 	@make serve
